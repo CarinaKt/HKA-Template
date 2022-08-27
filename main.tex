@@ -1,0 +1,110 @@
+\documentclass[11pt,parskip=half,listof=totoc,bibtotoc]{scrartcl}
+
+% Präambel
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{subfigure}
+%\usepackage{xcolor}
+\usepackage{url, hyphenat}
+%\usepackage{hyperref}
+
+% Literatur
+\usepackage{csquotes}
+\usepackage[style=authoryear]{biblatex}
+\bibliography{literatur.bib}
+%%\usepackage[backend=biber]{biblatex}
+%%\addbibresource{literatur.bib}
+
+% Mathematische formeln
+\usepackage{amsmath,amssymb,amstext}
+
+% Code
+\usepackage{listings}
+
+% Zahlen und Messgrößen
+\usepackage{siunitx}
+
+% Abbildungs nummerierung
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+
+% Farben
+\usepackage[colorlinks= false]{hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\definecolor{DispositionColor}{RGB}{100,55,140} %% used for links and so forth in screen-version
+\renewcommand{\headfont}{\normalfont\sffamily\color{DispositionColor}}
+
+% Farbe der Nummerierung
+%\renewcommand{\pnumfont}{\normalfont\sffamily\color{DispositionColor}}
+\addtokomafont{disposition}{\color{DispositionColor}}
+
+% Farbe von Abbildungsbeschriftungen
+%\addtokomafont{caption}{\color{DispositionColor}\footnotesize}
+%\addtokomafont{captionlabel}{\color{DispositionColor}}
+
+% Links
+\definecolor{hkaLila}{RGB}{100,55,140}
+\definecolor{black}{rgb}{0,0,0}
+\hypersetup{linktocpage=true, colorlinks=true, breaklinks=true, linkcolor=hkaLila, menucolor=hkaLila, urlcolor=hkaLila, filecolor=hkaLila, citecolor= black}
+
+% Index
+\usepackage{makeidx}
+\makeindex
+
+% TODOs
+\usepackage[]{todonotes}
+
+\title{Bachelorarbeit Vorlage}
+\author{Carina Kühnert}
+\date{\today{}, Malsch}
+
+\usepackage[automark]{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+\ifoot[]{\author}
+\ofoot[]{\pagemark}
+
+\begin{document}
+
+
+% Titel
+\maketitle
+\newpage
+
+% Seitennummerierung
+%\pagenumbering{roman}
+
+% Inhaltsvereichnis
+\tableofcontents
+\newpage
+
+% Abbildungsverzeicchnis
+\listoffigures
+\newpage
+
+% TODO-List
+\listoftodos[TODOs]
+
+
+% Seitennummerierung
+%\pagenumbering{arabic}
+
+% Kapitel
+\include{onePager}
+\include{example}
+\todo{Test}
+
+\newpage
+
+\index{Bezeichnung}
+\index{Bezeichnung!Unterbezeichnung}
+\index{Bezeichnung!Unterbezeichnung!Unterunterbezeichnung}
+\printindex
+
+\newpage
+
+\printbibliography
+
+\end{document}

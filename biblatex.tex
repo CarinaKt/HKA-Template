@@ -1,0 +1,33 @@
+\documentclass{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+%%\usepackage{hyperref}
+\usepackage[ 
+       colorlinks=false,		%% wenn keine Farbigen Links: = false
+    ]{hyperref}
+\usepackage[german]{csquotes}
+\usepackage[style=authortitle]{biblatex}
+\bibliography{literatur.bib}
+
+\begin{document}
+% Zitation im Fließtext:
+\cite[Vgl.][9-26]{Tibi2011}
+\cites[Vgl.][9-26]{Tibi2011}[][121]{Gettier1963}{Berkmann2020}
+% Zitation im Fließtext in Klammern:
+\parencite[][121]{Gettier1963}
+\parencites[Vgl.][9-26]{Tibi2011}[][121]{Gettier1963}{Berkmann2020}
+% Zitation in der Fußnote:
+\footcite{Berkmann2020}
+\footcites[Vgl.][9-26]{Tibi2011}[][121]{Gettier1963}{Berkmann2020}
+% Vollzitat im Text:
+\fullcite{Tibi2011}
+% Vollzitat in der Fußnote:
+\footfullcite{Gettier1963}
+% Elemente der bibliografischen Angaben in einen Satz einbauen:
+Der Aufsatz von \citeauthor{Berkmann2020} mit dem Titel \citetitle{Berkmann2020} ist im Internet unter \citeurl{Berkmann2020} zu finden.
+% Literaturverzeichnis:
+\printbibliography[type=book,title={Bücher}]
+\printbibliography[type=article,title={Artikel}]
+\printbibliography[type=misc,title={Sonstiges}]
+\end{document}

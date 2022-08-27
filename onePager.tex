@@ -1,0 +1,52 @@
+
+%\maketitle
+\section{One-Pager Thesis} 
+\subsection*{Carina Kühnert, 73683\\ \today{}, Malsch}
+
+% Thema in deutsch und englisch
+Ziel dieser Arbeit ist die Erweiterung einer mobilen Roboterplattform, sodass auf nicht statische Hindernisse reagiert werden kann.
+%%Extending an existing sensor system to deal with non-static obstacles.
+A mobile robot platform is extended to react to non-static obstacles in this work.
+
+% Umfeld/ Arbeitsbedingungen
+Die Bachelorarbeit wird in der Firma Aunovis GmbH geschrieben und ist Teil der Innovationsprojekte des Unternehmens.
+Das Ziel ist die Weiterentwicklung eines bestehenden Prototyps.
+%Dort wird an einem Werbeprojekt gearbeitet. 
+%Es soll später auf Messen zu Werbezwecken eingesetzt werden.
+Später soll der Prototyp auch auf Messen zu Werbezwecken eingesetzt werden.
+
+Hauptsächlich wird der Schwerpunkt der Arbeit sich auf den Umgang mit nicht statischen Hindernissen wie 
+beispielsweise einem Menschen, der durch die Bahn des Roboters läuft, konzentrieren.
+
+% Aktueller Stand/ vorhanden Sensorik
+Die Arbeit schließt an eine vorangegangene Arbeit an, 
+in dieser wurde eine mobile Roboterplattform, die ihre Umgebung kartiert, aufgebaut.
+Diese verfügt über RealSense D435 (Tiefenkamera), eine T265 (Tracking-Kamera) und einen Nvidia Jetson AGX Computer
+und hat ROS2 als Middleware installiert. Ebenfalls wurde die ODrive Motorsteuerung (Python-Bibliothek) in ROS2 integriert.
+Aktuell kann der Roboter erkennen, wenn etwas in seine berechnete Bahn kommt. Er wartet, bis die Bahn wieder frei ist. 
+Aufgrund der Kameraposition kann die Umgebung bei engen Kurven um ein Hindernis erst ab einem Abstand von 73 cm beobachtet werden. Kreuzt etwas Kleines, z.B. 
+ein Baby, die Roboterbahn innerhalb dieser Entfernung, so wird dies nicht wahrgenommen. 
+
+% Anforderungen
+Der Roboter hat das Aussehen des R2D2 Roboters, so ist bei der Auswahl ergänzender Sensoren darauf zu achten, 
+dass das Aussehen weiterhin dem R2D2 entspricht. Ebenfalls sollten die ergänzten Funktionen möglichst ressourcenschonend sein, 
+um die Batterielaufzeit nicht unnötig zu verkürzen. 
+%%Zusätzliche Sensoren können ergänzt werden.
+Ebenfalls sind sicherheitstechnische Betrachtungen zu berücksichtigen, um Schäden an Menschen oder der Umgebung zu vermeiden.
+Hier soll der Schwerpunkt nicht auf der genauen Umsetzung der ISO Normen liegen.
+
+% Literatur
+Als Literatur steht die vorangegangene Bachelorarbeit, sowie die Dokumentationen von ROS2 und den verwendeten Sensoren zu Verfügung.
+
+% Arbeitsschritte
+Mögliche Features:
+\begin{itemize}
+    \item anhalten, wenn sich etwas im Weg befindet,
+          was sich nicht in der Punktewolke befindet (z.B. ein vorbeilaufender Mensch)
+    \item Gesichtserkennung, um Personen zu erkennen und personalisiert reagieren zu können
+    \item Zuordnung des Gesichts zu einer Platzreservierung in einem Buchungssystem
+    \item (erkannte) Person zu einem bestimmten Punkt führen
+    \item überprüfen, ob erkannte Person noch folgt
+    \item folgen einer Person auf ein Signal hin
+    %\item komfortablere Steuerung der Roboterplattform
+\end{itemize}
